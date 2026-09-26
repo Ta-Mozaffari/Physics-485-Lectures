@@ -29,4 +29,6 @@
 ## Slides
 
 - Keep one Beamer frame per `.tex` file under `slides/`.
-- Assemble the ordered frames from the root `main.tex` file with `\input{slides/<name>}`.
+- Name slide files with a zero-padded numeric prefix followed by a lowercase, kebab-case topic, for example `01-title.tex` and `02-qubit-bloch-sphere.tex`.
+- The numeric prefix defines deck order. Keep the `slides/` filenames and the `\input{slides/<name>}` entries in root `main.tex` in ascending numeric order.
+- Assign the next available prefix to new slides. Renumber only when the intended deck sequence changes.
