@@ -1,0 +1,62 @@
+\begin{frame}{The Josephson junction and Cooper-pair tunneling}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \centering
+    \small
+    \textbf{A thin barrier between two superconductors}
+
+    \begin{tikzpicture}[x=0.82cm,y=0.82cm,>=Stealth]
+      \fill[blue!18] (-3.35,-1.35) rectangle (-0.42,1.35);
+      \fill[orange!22] (0.42,-1.35) rectangle (3.35,1.35);
+      \fill[gray!35] (-0.42,-1.35) rectangle (0.42,1.35);
+      \draw[thick] (-3.35,-1.35) rectangle (-0.42,1.35);
+      \draw[thick] (0.42,-1.35) rectangle (3.35,1.35);
+      \draw[thick] (-0.42,-1.35) rectangle (0.42,1.35);
+
+      \node[align=center] at (-1.88,1.70) {left superconductor\\phase $\phi_L$};
+      \node[align=center] at (1.88,1.70) {right superconductor\\phase $\phi_R$};
+      \node[align=center,font=\scriptsize] at (0,-1.70) {thin insulating barrier};
+
+      \fill[blue!75!black] (-1.75,0.18) circle (0.18);
+      \fill[blue!75!black] (-1.30,0.18) circle (0.18);
+      \draw[very thick,blue!75!black] (-1.57,0.18)--(-1.48,0.18);
+      \node[below,font=\scriptsize] at (-1.52,-0.08) {Cooper pair};
+      \draw[->,very thick,red!75!black,dashed] (-0.98,0.18)--(1.22,0.18)
+        node[midway,above,font=\scriptsize] {tunneling};
+      \fill[blue!75!black] (1.40,0.18) circle (0.18);
+      \fill[blue!75!black] (1.85,0.18) circle (0.18);
+      \draw[very thick,blue!75!black] (1.58,0.18)--(1.67,0.18);
+    \end{tikzpicture}
+
+    \vspace{-0.4em}
+    \raggedright
+    In a superconductor, electrons form bound pairs through their interaction
+    with the crystal lattice. These \textbf{Cooper pairs} share one collective
+    quantum phase and can move without resistance. A sufficiently thin barrier
+    lets a pair tunnel from one side to the other.
+
+    \column{0.48\textwidth}
+    \small
+    \textbf{From tunneling to an anharmonic potential}
+
+    The phase difference across the junction controls the supercurrent:
+    \[
+      \delta=\phi_R-\phi_L,
+      \qquad I=I_c\sin\delta.
+    \]
+    This sine relation gives the junction a potential energy
+    \[
+      U_J(\delta)=-E_J\cos\delta.
+    \]
+    Near a minimum,
+    \[
+      -E_J\cos\delta
+      \approx \text{constant}+\frac{E_J}{2}\delta^2
+      -\frac{E_J}{24}\delta^4+\cdots .
+    \]
+    The quadratic term acts like an inductance. The higher-order terms make
+    the potential shallower than a parabola and make adjacent transition
+    frequencies unequal. That unequal spacing gives a transmon its qubit
+    addressability.
+  \end{columns}
+\end{frame}
