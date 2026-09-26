@@ -1,0 +1,55 @@
+\begin{frame}{Cross-resonance gates in superconducting circuits}
+  \small
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \textbf{Drive the control at the target's frequency}
+
+    Two coupled transmons let a microwave drive on the control influence the
+    target. The drive is tuned near the target transition frequency,
+    $\omega_d\approx\omega_t$.
+
+    \centering
+    \begin{tikzpicture}[x=0.9cm,y=0.78cm,>=Stealth]
+      \draw[thick,fill=blue!12,rounded corners=2pt] (-2.4,-0.25) rectangle (-0.55,1.0);
+      \draw[thick,fill=orange!18,rounded corners=2pt] (0.55,-0.25) rectangle (2.4,1.0);
+      \node[align=center] at (-1.48,0.38) {control\\transmon\\$\omega_c$};
+      \node[align=center] at (1.48,0.38) {target\\transmon\\$\omega_t$};
+      \draw[thick] (-0.55,0.38)--(-0.16,0.38);
+      \draw[thick] (-0.16,0.06)--(-0.16,0.70);
+      \draw[thick] (0.16,0.06)--(0.16,0.70);
+      \draw[thick] (0.16,0.38)--(0.55,0.38);
+      \node[below] at (0,-0.25) {weak coupling};
+      \draw[->,very thick,red!75!black] (-1.48,1.75)--(-1.48,1.05)
+        node[midway,right,align=left] {microwave drive\\$\omega_d\approx\omega_t$};
+    \end{tikzpicture}
+
+    \column{0.48\textwidth}
+    \centering
+    \textbf{Conditional Rabi rotation of the target}
+
+    \begin{tikzpicture}[x=0.92cm,y=0.86cm,>=Stealth]
+      \foreach \cx/\sgn/\lab in {-1.55/1/0,1.55/-1/1} {
+        \draw[gray!55] (\cx,0) circle (0.92);
+        \draw[->,gray] (\cx-1.05,0)--(\cx+1.08,0) node[right] {$y$};
+        \draw[->,gray] (\cx,-1.08)--(\cx,1.12) node[above] {$z$};
+        \draw[very thick,blue!75!black] (\cx,0)--(\cx,0.78)
+          node[above] {$|0\rangle_t$};
+        \draw[->,very thick,red!75!black] (\cx,0.78)
+          arc[start angle=90,end angle={90-55*\sgn},radius=0.78];
+        \draw[very thick,red!75!black] (\cx,0)--({\cx+0.78*sin(55*\sgn)},{0.78*cos(55*\sgn)});
+        \node[below] at (\cx,-1.12) {control $|\lab\rangle_c$};
+        \node[red!75!black] at ({\cx+0.52*\sgn},0.48) {$\theta$};
+      }
+    \end{tikzpicture}
+
+    \raggedright
+    The control state sets the direction of the target's rotation. As the pulse
+    continues, the rotation angle grows: this is a conditional Rabi oscillation.
+  \end{columns}
+
+  \vspace{1.5em}
+  \centering
+  \small
+  Effective interaction: $H_{\mathrm{CR}}\sim Z_cX_t$. Echo pulses and
+  single-qubit rotations turn the calibrated interaction into a CNOT gate.
+\end{frame}

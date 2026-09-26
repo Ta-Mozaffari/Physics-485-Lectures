@@ -1,0 +1,51 @@
+\begin{frame}{Entanglement and Bell states}
+  \small
+  An entangled pair has a joint state that cannot be split into one state per qubit.
+
+  \begin{columns}[T,onlytextwidth]
+    \column{0.49\textwidth}
+    \textbf{Make a Bell pair from $|00\rangle$}
+
+    \centering
+    \begin{tikzpicture}[x=0.88cm,y=0.68cm,>=Stealth]
+      \draw[thick] (0,1)--(5.65,1);
+      \draw[thick] (0,0)--(5.65,0);
+      \node[left] at (0,1) {$q_1:\ |0\rangle$};
+      \node[left] at (0,0) {$q_2:\ |0\rangle$};
+      \draw[thick,fill=white] (1.55,0.68) rectangle (2.35,1.32);
+      \node at (1.95,1) {$H$};
+      \fill (3.85,1) circle (2.3pt);
+      \draw[thick] (3.85,1)--(3.85,0);
+      \draw[thick] (3.85,0) circle (0.19);
+      \draw[thick] (3.73,0)--(3.97,0);
+      \draw[thick] (3.85,-0.12)--(3.85,0.12);
+      \node[below] at (1.95,-0.35) {Hadamard};
+      \node[below,align=center] at (3.85,-0.35) {controlled-$X$\\(CNOT)};
+    \end{tikzpicture}
+
+    \vspace{-0.4em}
+    \[
+      |00\rangle\xrightarrow{H\text{ on }q_1}
+      \frac{|00\rangle+|10\rangle}{\sqrt{2}}
+      \xrightarrow{\mathrm{CNOT}}
+      |\Phi^+\rangle=\frac{|00\rangle+|11\rangle}{\sqrt{2}}.
+    \]
+    Measuring both qubits gives $00$ or $11$, each with probability $1/2$.
+
+    \column{0.47\textwidth}
+    \textbf{The four Bell states}
+    \[
+      |\Phi^\pm\rangle=\frac{|00\rangle\pm|11\rangle}{\sqrt{2}},
+      \qquad
+      |\Psi^\pm\rangle=\frac{|01\rangle\pm|10\rangle}{\sqrt{2}}.
+    \]
+    \textbf{Other ways to entangle qubits}
+
+    \begin{itemize}
+      \item A controlled-$Z$ gate adds a phase when both qubits are $|1\rangle$.
+      \item An iSWAP gate exchanges $|01\rangle$ and $|10\rangle$ while adding a phase.
+      \item Direct qubit coupling can create these interactions. Single-qubit
+        rotations before or after them help choose the desired Bell state.
+    \end{itemize}
+  \end{columns}
+\end{frame}

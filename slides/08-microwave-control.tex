@@ -1,0 +1,63 @@
+\begin{frame}{Microwave control and Rabi oscillations}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \small
+    \textbf{A resonant microwave pulse}
+
+    The microwave frequency matches the energy gap between $|0\rangle$ and
+    $|1\rangle$. Its amplitude sets how quickly the qubit rotates.
+
+    \centering
+    \begin{tikzpicture}[x=0.78cm,y=0.68cm,>=Stealth]
+      \draw[->,gray] (-3.15,0)--(3.35,0) node[right] {$t$};
+      \draw[->,gray] (-3.05,-1.0)--(-3.05,1.25) node[above] {$V$};
+      \draw[thick,blue!65!black] (-2.75,0)--(-1.9,0);
+      \draw[thick,blue!65!black,domain=-1.9:1.9,samples=100]
+        plot (\x,{0.82*sin(720*\x)});
+      \draw[thick,blue!65!black] (1.9,0)--(2.75,0);
+      \draw[<->,thick,red!75!black] (-1.9,-0.86)--(1.9,-0.86);
+      \node[below,text=red!75!black] at (0,-0.86) {pulse duration $t_\pi$};
+      \node[above,align=center] at (0,1.25) {frequency matched to\\the qubit transition};
+    \end{tikzpicture}
+
+    \raggedright
+    During the pulse, the qubit moves back and forth between $|0\rangle$ and
+    $|1\rangle$. This repeating motion is called a \textbf{Rabi oscillation}.
+
+    \column{0.48\textwidth}
+    \centering
+    \small
+    \textbf{Choose the pulse length to make an $X$ gate}
+
+    \begin{tikzpicture}[x=1.95cm,y=2.15cm,>=Stealth]
+      \draw[->,gray] (-0.08,0)--(2.22,0) node[right] {$t/t_\pi$};
+      \draw[->,gray] (0,-0.08)--(0,1.22) node[above] {$P_1$};
+      \draw[gray!30] (0,0.5)--(2.05,0.5);
+      \draw[gray!30] (0,1)--(2.05,1);
+      \draw[very thick,blue!75!black,domain=0:2,samples=100]
+        plot (\x,{sin(90*\x)^2});
+      \foreach \x/\lab in {0/0,0.5/\frac{1}{2},1/1,1.5/\frac{3}{2},2/2} {
+        \draw[gray] (\x,0)--(\x,-0.035);
+        \node[below] at (\x,-0.035) {$\lab$};
+      }
+      \foreach \y/\lab in {0/0,0.5/0.5,1/1} {
+        \draw[gray] (0,\y)--(-0.035,\y);
+        \node[left] at (-0.035,\y) {$\lab$};
+      }
+      \draw[dashed,red!75!black] (1,0)--(1,1.08);
+      \fill[red!75!black] (1,1) circle (1.5pt);
+      \node[above right,text=red!75!black] at (1,1.02) {$\pi$ pulse};
+    \end{tikzpicture}
+
+    \vspace{-0.5em}
+    For a qubit starting in $|0\rangle$,
+    \[
+      P_1(t)=\sin^2\!\left(\frac{\pi t}{2t_\pi}\right).
+    \]
+    After one half oscillation, the $\pi$ pulse swaps the states:
+    \[
+      |0\rangle\leftrightarrow|1\rangle
+      \qquad\text{(the $X$ gate, up to an overall phase).}
+    \]
+  \end{columns}
+\end{frame}
