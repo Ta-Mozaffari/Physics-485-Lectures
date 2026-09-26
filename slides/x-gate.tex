@@ -1,0 +1,20 @@
+\begin{frame}{X gate: bit flip}
+  \begin{columns}[c]
+    \column{0.60\textwidth}
+    \[
+      X=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+      X\begin{pmatrix}\alpha\\\beta\end{pmatrix}
+       =\begin{pmatrix}\beta\\\alpha\end{pmatrix}.
+    \]
+    \[
+      X|0\rangle=\begin{pmatrix}0&1\\1&0\end{pmatrix}
+      \begin{pmatrix}1\\0\end{pmatrix}
+      =\begin{pmatrix}0\\1\end{pmatrix}=|1\rangle.
+    \]
+    On the Bloch sphere: a $180^\circ$ rotation about the $x$ axis,
+    $(x,y,z)\mapsto(x,-y,-z)$.
+    \column{0.34\textwidth}
+    \centering\blochgate{0,1.45}{$|0\rangle$}{0,-1.45}{$|1\rangle$}
+    \small Blue: input \quad Red: output
+  \end{columns}
+\end{frame}
