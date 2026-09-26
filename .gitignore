@@ -1,2 +1,9 @@
 .DS_Store
 docs/
+
+# Temporary figure files; final PNG, JPG, and PDF assets remain tracked.
+figures/**/.DS_Store
+figures/**/*.tmp
+figures/**/*.bak
+figures/**/*~
+figures/**/.~lock.*
