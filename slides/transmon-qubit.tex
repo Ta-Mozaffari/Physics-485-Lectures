@@ -2,9 +2,10 @@
   \begin{columns}[T,onlytextwidth]
     \column{0.45\textwidth}
     \centering
+    \small
     \textbf{Circuit}
 
-    \begin{tikzpicture}[scale=0.92]
+    \begin{tikzpicture}[scale=0.78]
       \draw[thick] (-1.65,0.85)--(1.65,0.85);
       \draw[thick] (-1.65,-0.85)--(1.65,-0.85);
       \fill (-1.65,0.85) circle (1.6pt);
@@ -26,23 +27,23 @@
       \node[right] at (1.02,0) {JJ, $E_J$};
     \end{tikzpicture}
 
-    \vspace{-0.3em}
+    \vspace{-0.6em}
     \[
       H_{\mathrm{LC}}=\frac{Q^2}{2C}+\frac{\Phi^2}{2L},
       \qquad E_{m+1}-E_m=\hbar\omega.
     \]
-    A linear inductance gives a quadratic potential and equal level spacing.
-    Replacing the linear inductor with a Josephson junction gives
+    A linear inductance gives a quadratic potential with equal level spacing.
+    The Josephson junction adds nonlinear inductance and a cosine potential:
     \[
       H=4E_C(\hat n-n_g)^2-E_J\cos\hat\phi .
     \]
-    The cosine potential makes the level spacing unequal.
 
     \column{0.51\textwidth}
     \centering
+    \small
     \textbf{Josephson potential and energy levels}
 
-    \begin{tikzpicture}[x=0.92cm,y=1.12cm,>=Stealth]
+    \begin{tikzpicture}[x=0.82cm,y=0.96cm,>=Stealth]
       \draw[->,gray] (-3.45,0)--(3.55,0) node[right] {$\phi$};
       \draw[->,gray] (0,-1.35)--(0,1.15) node[above] {$U(\phi)$};
       \draw[very thick,blue!70!black,domain=-3.15:3.15,samples=100]
@@ -62,13 +63,12 @@
         node[midway,right] {$\hbar\omega_{12}$};
     \end{tikzpicture}
 
-    \vspace{-0.4em}
+    \vspace{-0.7em}
     \[
-      \omega_{12}\neq\omega_{01},\qquad
-      |0\rangle\equiv\text{ground state},\quad
-      |1\rangle\equiv\text{first excited state}.
+      \underbrace{\{|0\rangle,|1\rangle\}}_{\text{qubit}},
+      \qquad \omega_{12}\neq\omega_{01}.
     \]
-    \small The unequal transition frequencies let a resonant microwave pulse
-    address the qubit transition while limiting excitation of $|2\rangle$.
+    A microwave drive at $\omega_{01}$ addresses the qubit transition while
+    detuning the transition from $|1\rangle$ to $|2\rangle$.
   \end{columns}
 \end{frame}
