@@ -2,7 +2,23 @@
 
 \usetheme{Madrid}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 \graphicspath{{figures/}}
+
+% A compact Bloch-sphere sketch, with the initial and final states in the x-z plane.
+\newcommand{\blochgate}[4]{%
+\begin{tikzpicture}[scale=0.82,>=Stealth]
+  \draw[gray!55] (0,0) circle (1.45);
+  \draw[gray!55,dashed] (-1.45,0) arc (180:360:1.45 and 0.38);
+  \draw[gray!55] (-1.45,0) arc (180:0:1.45 and 0.38);
+  \draw[->,gray] (-1.8,0)--(1.9,0) node[right] {$x$};
+  \draw[->,gray] (0,-1.8)--(0,1.9) node[above] {$z$};
+  \node[below left,gray] at (0,0) {$y$};
+  \draw[->,very thick,blue] (0,0)--(#1) node[above left] {#2};
+  \draw[->,very thick,red] (0,0)--(#3) node[above right] {#4};
+\end{tikzpicture}%
+}
 
 \title{Physics 485}
 \subtitle{Lecture slides}
@@ -11,8 +27,10 @@
 
 \begin{document}
 
-\begin{frame}
-  \titlepage
-\end{frame}
+\input{slides/title}
+\input{slides/qubit-bloch-sphere}
+\input{slides/x-gate}
+\input{slides/z-gate}
+\input{slides/hadamard-gate}
 
 \end{document}

@@ -1,0 +1,21 @@
+\begin{frame}{Z gate: phase flip}
+  \begin{columns}[c]
+    \column{0.60\textwidth}
+    \[
+      Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
+      Z\begin{pmatrix}\alpha\\\beta\end{pmatrix}
+       =\begin{pmatrix}\alpha\\-\beta\end{pmatrix}.
+    \]
+    \[
+      Z|+\rangle=\frac{1}{\sqrt2}
+      \begin{pmatrix}1&0\\0&-1\end{pmatrix}
+      \begin{pmatrix}1\\1\end{pmatrix}
+      =\frac{1}{\sqrt2}\begin{pmatrix}1\\-1\end{pmatrix}=|-\rangle.
+    \]
+    On the Bloch sphere: a $180^\circ$ rotation about the $z$ axis,
+    $(x,y,z)\mapsto(-x,-y,z)$.
+    \column{0.34\textwidth}
+    \centering\blochgate{1.45,0}{$|+\rangle$}{-1.45,0}{$|-\rangle$}
+    \small Blue: input \quad Red: output
+  \end{columns}
+\end{frame}

@@ -1,0 +1,23 @@
+\begin{frame}{Qubit states and the Bloch sphere}
+  \begin{columns}[c]
+    \column{0.58\textwidth}
+    \[
+      |\psi\rangle=\alpha|0\rangle+\beta|1\rangle
+      =\begin{pmatrix}\alpha\\\beta\end{pmatrix},
+      \qquad |\alpha|^2+|\beta|^2=1.
+    \]
+    Ignoring global phase, every pure qubit state can be written as
+    \[
+      |\psi\rangle=\cos\frac{\theta}{2}|0\rangle
+      +e^{i\phi}\sin\frac{\theta}{2}|1\rangle.
+    \]
+    Its Bloch vector is
+    $\mathbf r=(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$.
+    \column{0.36\textwidth}
+    \centering
+    \blochgate{0,1.45}{$|0\rangle$}{1.45,0}{$|+\rangle$}
+    \vspace{0.3em}
+    \small $|1\rangle$: south pole; $|\pm\rangle=(|0\rangle\pm|1\rangle)/\sqrt2$: $\pm x$.
+  \end{columns}
+  \vfill\tiny Adapted from the qubit and Bloch-sphere introduction in lecture handouts 13 and 14.
+\end{frame}
