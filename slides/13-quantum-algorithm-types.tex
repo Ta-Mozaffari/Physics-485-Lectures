@@ -1,0 +1,55 @@
+\begin{frame}{Different goals, different quantum algorithms}
+  \small
+  Quantum algorithms use qubits, gates, and measurements in different ways to
+  solve different kinds of problems.
+
+  \vspace{0.55em}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.32\textwidth}
+    \setbeamercolor{algcard}{fg=black,bg=blue!8}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{algcard}
+      \centering\textbf{Query algorithms}\par
+      \vspace{0.4em}
+      \raggedright\textbf{Question:} Which item in a large set has the property we want?\par
+      \vspace{0.35em}
+      \textbf{Quantum idea:} An \emph{oracle} marks a correct answer; gates amplify its chance of appearing when measured.\par
+      \vspace{0.35em}
+      \textbf{Example:} Grover search needs about $\sqrt{N}$ oracle queries for $N$ possible items.
+    \end{beamercolorbox}
+
+    \column{0.32\textwidth}
+    \setbeamercolor{algcard}{fg=black,bg=orange!10}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{algcard}
+      \centering\textbf{Factoring}\par
+      \vspace{0.4em}
+      \raggedright\textbf{Question:} Which prime numbers multiply to make a given integer?\par
+      \vspace{0.35em}
+      \textbf{Quantum idea:} Shor's algorithm uses quantum gates to find a repeating pattern, then classical steps use it to find factors.\par
+      \vspace{0.35em}
+      \textbf{Example:} Factor an integer such as $15$ into $3\times5$.
+    \end{beamercolorbox}
+
+    \column{0.32\textwidth}
+    \setbeamercolor{algcard}{fg=black,bg=green!9}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.7em,rounded=true]{algcard}
+      \centering\textbf{Optimization and variational}\par
+      \vspace{0.4em}
+      \raggedright\textbf{Question:} Which choice gives the lowest cost?\par
+      \vspace{0.35em}
+      \textbf{Quantum idea:} A tunable circuit prepares candidate answers; measurements estimate their cost, and a classical computer adjusts the circuit.\par
+      \vspace{0.35em}
+      \textbf{Example:} QAOA searches for a low-cost solution to a graph problem.
+    \end{beamercolorbox}
+  \end{columns}
+
+  \vspace{0.45em}
+  \setbeamercolor{typesTakeaway}{fg=black,bg=blue!12}
+  \noindent\makebox[\textwidth][c]{%
+    \begin{beamercolorbox}[wd=0.96\textwidth,sep=0.55em,center,rounded=true]{typesTakeaway}
+      \small\bfseries
+      Different problems call for different circuit strategies; quantum computers do not speed up every task.
+    \end{beamercolorbox}%
+  }
+  \vspace{0.2em}
+  {\tiny Sources: Grover, \emph{STOC} (1996); Shor, \emph{FOCS} (1994); Farhi, Goldstone \& Gutmann, arXiv:1411.4028 (2014).}
+\end{frame}
