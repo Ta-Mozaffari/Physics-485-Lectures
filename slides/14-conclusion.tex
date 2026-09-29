@@ -6,14 +6,16 @@
   \vspace{0.65em}
   \begin{center}
     \begin{tikzpicture}[>=Stealth]
-      \node[draw,rounded corners,fill=blue!10,minimum width=2.55cm,minimum height=1.0cm,align=center] (q) at (0,0)
-        {\textbf{Qubits}\\encode quantum information};
-      \node[draw,rounded corners,fill=blue!10,minimum width=2.75cm,minimum height=1.0cm,align=center] (g) at (4.0,0)
-        {\textbf{Gates}\\change and connect states};
-      \node[draw,rounded corners,fill=orange!15,minimum width=2.75cm,minimum height=1.0cm,align=center] (m) at (8.1,0)
-        {\textbf{Measurements}\\give classical outcomes};
-      \draw[->,very thick,gray!75] (q.east)--(g.west);
-      \draw[->,very thick,gray!75] (g.east)--(m.west);
+      \tikzset{flowbox/.style={draw,rounded corners,minimum width=3.0cm,
+        text width=2.8cm,minimum height=1.05cm,inner sep=4pt,align=center}}
+      \node[flowbox,fill=blue!10] (q) at (0,0)
+        {\small\bfseries Qubits\\[-1pt]\scriptsize encode quantum information};
+      \node[flowbox,fill=blue!10] (g) at (4.15,0)
+        {\small\bfseries Gates\\[-1pt]\scriptsize change and connect states};
+      \node[flowbox,fill=orange!15] (m) at (8.3,0)
+        {\small\bfseries Measurements\\[-1pt]\scriptsize give classical outcomes};
+      \draw[->,very thick,gray!75,shorten <=2pt,shorten >=2pt] (q.east)--(g.west);
+      \draw[->,very thick,gray!75,shorten <=2pt,shorten >=2pt] (g.east)--(m.west);
     \end{tikzpicture}
   \end{center}
 
