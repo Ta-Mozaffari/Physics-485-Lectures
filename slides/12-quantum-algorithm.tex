@@ -1,0 +1,52 @@
+\begin{frame}{How does a quantum algorithm work?}
+  \small
+  A quantum algorithm is a recipe for preparing qubits, applying gates, and
+  measuring the result to answer a question.
+
+  \vspace{0.65em}
+  \centering
+  \begin{tikzpicture}[>=Stealth, x=1cm, y=1cm]
+    % Qubit wires and a short example gate sequence.
+    \draw[thick] (0,1)--(8.4,1);
+    \draw[thick] (0,0)--(8.4,0);
+    \node[left] at (0,1) {$q_0$};
+    \node[left] at (0,0) {$q_1$};
+    \node[draw,rounded corners,fill=blue!12,minimum width=0.75cm,minimum height=0.6cm] at (1.15,1) {$H$};
+    \node[draw,circle,fill=black,inner sep=1.6pt] (control) at (3.0,1) {};
+    \draw[thick] (control)--(3.0,0);
+    \node[draw,circle,minimum size=0.42cm,inner sep=0pt] at (3.0,0) {$+$};
+    \node[draw,rounded corners,fill=blue!12,minimum width=0.75cm,minimum height=0.6cm] at (4.75,1) {$R_y$};
+    \node[draw,rounded corners,fill=blue!12,minimum width=0.75cm,minimum height=0.6cm] at (4.75,0) {$R_y$};
+    \node[draw,rounded corners,fill=orange!20,minimum width=0.72cm,minimum height=0.62cm] at (6.65,1) {$M$};
+    \node[draw,rounded corners,fill=orange!20,minimum width=0.72cm,minimum height=0.62cm] at (6.65,0) {$M$};
+    \draw[->,thick] (7.15,1)--(7.65,1);
+    \draw[->,thick] (7.15,0)--(7.65,0);
+    \node[align=center] at (8.05,0.5) {classical\bits};
+    \node[align=center,blue!65!black] at (1.15,1.65) {prepare};
+    \node[align=center,blue!65!black] at (3.0,1.65) {entangle};
+    \node[align=center,blue!65!black] at (4.75,1.65) {compute with gates};
+    \node[align=center,orange!70!black] at (6.65,1.65) {measure};
+  \end{tikzpicture}
+
+  \vspace{0.75em}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \textbf{1. Prepare and process}\par
+    Encode an input in qubits, then use single- and two-qubit gates to change
+    their states and build correlations.
+
+    \column{0.48\textwidth}
+    \textbf{2. Measure and interpret}\par
+    Measurement turns qubit states into ordinary bits. Because outcomes can be
+    probabilistic, we often repeat the circuit and look at the results together.
+  \end{columns}
+
+  \vspace{0.7em}
+  \setbeamercolor{algorithmTakeaway}{fg=black,bg=blue!12}
+  \noindent\makebox[\textwidth][c]{%
+    \begin{beamercolorbox}[wd=0.96\textwidth,sep=0.65em,center,rounded=true]{algorithmTakeaway}
+      \small\bfseries
+      Qubits hold the information, gates carry out the recipe, and measurements provide the answer.
+    \end{beamercolorbox}%
+  }
+\end{frame}

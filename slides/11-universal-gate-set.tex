@@ -1,0 +1,51 @@
+\begin{frame}{A universal quantum gate set}
+  \small
+  \begin{center}
+    A \textbf{universal gate set} can approximate any desired quantum gate
+    to any chosen accuracy.
+  \end{center}
+
+  \vspace{0.5em}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.46\textwidth}
+    \centering
+    \textbf{Clifford gates}\par
+    \vspace{0.35em}
+    \begin{tikzpicture}[>=Stealth]
+      \node[draw,rounded corners,fill=blue!10,minimum width=1.05cm,minimum height=0.7cm] (h) at (0,0) {$H$};
+      \node[draw,rounded corners,fill=blue!10,minimum width=1.05cm,minimum height=0.7cm] (s) at (1.45,0) {$S$};
+      \node[draw,rounded corners,fill=blue!10,minimum width=1.35cm,minimum height=0.7cm] (c) at (3.05,0) {CNOT};
+    \end{tikzpicture}
+
+    \vspace{0.4em}
+    Hadamard makes superpositions; $S$ changes phase; CNOT links two qubits.
+    Together, these are useful but \textbf{not universal}.
+
+    \column{0.08\textwidth}
+    \centering
+    \vspace{1.3em}
+    $+$
+
+    \column{0.46\textwidth}
+    \centering
+    \textbf{Add a non-Clifford gate}\par
+    \vspace{0.35em}
+    \begin{tikzpicture}[baseline=(t.base)]
+      \node[draw,rounded corners,fill=orange!18,minimum width=1.05cm,minimum height=0.7cm] (t) at (0,0) {$T$};
+      \node[align=left] at (2.2,0) {$T=\begin{pmatrix}1&0\\0&e^{i\pi/4}\end{pmatrix}$};
+    \end{tikzpicture}
+
+    \vspace{0.4em}
+    $T$ adds a $\pi/4$ phase to the $|1\rangle$ component. The combined set
+    $\{H,S,T,\mathrm{CNOT}\}$ is called \textbf{Clifford+$T$}.
+  \end{columns}
+
+  \vspace{0.7em}
+  \setbeamercolor{universaltakeaway}{fg=black,bg=blue!12}
+  \noindent\makebox[\textwidth][c]{%
+    \begin{beamercolorbox}[wd=0.96\textwidth,sep=0.65em,center,rounded=true]{universaltakeaway}
+      \small\bfseries
+      By combining these gates in sequences, we can approximate any quantum operation to arbitrary precision.
+    \end{beamercolorbox}%
+  }
+\end{frame}
