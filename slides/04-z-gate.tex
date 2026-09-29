@@ -1,6 +1,6 @@
 \begin{frame}{Z gate: phase flip}
-  \begin{columns}[c]
-    \column{0.60\textwidth}
+  \begin{columns}[c,onlytextwidth]
+    \column{0.57\textwidth}
     \[
       Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
       Z\begin{pmatrix}\alpha\\\beta\end{pmatrix}
@@ -14,8 +14,11 @@
     \]
     On the Bloch sphere: a $180^\circ$ rotation about the $z$ axis,
     $(x,y,z)\mapsto(-x,-y,z)$.
-    \column{0.34\textwidth}
-    \centering\blochgate{1.45,0}{$|+\rangle$}{-1.45,0}{$|-\rangle$}
-    \small Blue: input \quad Red: output
+    \column{0.41\textwidth}
+    \centering
+    \animategraphics[autoplay,loop,controls,width=\linewidth]{14}
+      {figures/pauli-z-frames/pauli-z-}{0}{47}
+    \par\vspace{0.35em}
+    {\scriptsize State vector rotates by $\pi$; global phase is ignored.}
   \end{columns}
 \end{frame}

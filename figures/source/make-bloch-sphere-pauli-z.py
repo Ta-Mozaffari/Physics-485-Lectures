@@ -15,6 +15,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "figures" / "bloch-sphere-pauli-z.gif"
+PDF_FRAMES = ROOT / "figures" / "pauli-z-frames"
 
 WIDTH, HEIGHT = 1300, 850
 SCALE = 2  # Supersample for smooth circles and curves.
@@ -260,6 +261,12 @@ def make_frame(progress: float) -> Image.Image:
 
 def main() -> None:
     frames = [make_frame(index / (FRAME_COUNT - 1)) for index in range(FRAME_COUNT)]
+    PDF_FRAMES.mkdir(parents=True, exist_ok=True)
+    for index, frame in enumerate(frames):
+        # The slide uses the sphere-only crop as an embedded PDF animation.
+        crop = frame.crop((120, 130, 740, 750)).resize((620, 620), Image.Resampling.LANCZOS)
+        crop.save(PDF_FRAMES / f"pauli-z-{index}.png", optimize=True)
+
     palette = frames[0].quantize(colors=128, method=Image.Quantize.MEDIANCUT)
     indexed = [frame.quantize(palette=palette, dither=Image.Dither.NONE) for frame in frames]
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
