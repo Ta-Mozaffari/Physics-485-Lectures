@@ -1,0 +1,58 @@
+\begin{frame}{Conclusion: from qubits to reliable results}
+  \small
+  Quantum computing uses controlled operations on qubits to produce useful
+  measurement results.
+
+  \vspace{0.65em}
+  \begin{center}
+    \begin{tikzpicture}[>=Stealth]
+      \tikzset{flowbox/.style={draw,rounded corners,minimum width=3.0cm,
+        text width=2.8cm,minimum height=1.05cm,inner sep=4pt,align=center}}
+      \node[flowbox,fill=blue!10] (q) at (0,0)
+        {\small\bfseries Qubits\\[-1pt]\scriptsize encode quantum information};
+      \node[flowbox,fill=blue!10] (g) at (4.15,0)
+        {\small\bfseries Gates\\[-1pt]\scriptsize change and connect states};
+      \node[flowbox,fill=orange!15] (m) at (8.3,0)
+        {\small\bfseries Measurements\\[-1pt]\scriptsize give classical outcomes};
+      \draw[->,very thick,gray!75,shorten <=2pt,shorten >=2pt] (q.east)--(g.west);
+      \draw[->,very thick,gray!75,shorten <=2pt,shorten >=2pt] (g.east)--(m.west);
+    \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.55em}
+  \begin{center}
+    \textbf{Real qubits are noisy, so we use strategies to manage errors.}
+  \end{center}
+
+  \vspace{0.25em}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \setbeamercolor{errorcard}{fg=black,bg=blue!8}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.75em,rounded=true]{errorcard}
+      \textbf{Error correction}\par
+      \vspace{0.25em}
+      Encode one logical qubit across several physical qubits. Syndrome checks
+      help detect and correct errors without directly reading the stored
+      quantum information.
+    \end{beamercolorbox}
+
+    \column{0.48\textwidth}
+    \setbeamercolor{mitigationcard}{fg=black,bg=orange!10}
+    \begin{beamercolorbox}[wd=\linewidth,sep=0.75em,rounded=true]{mitigationcard}
+      \textbf{Error mitigation}\par
+      \vspace{0.25em}
+      Use repeated measurements and information about device noise to improve
+      final estimates. This reduces error impact, but does not correct each
+      physical error.
+    \end{beamercolorbox}
+  \end{columns}
+
+  \vspace{0.65em}
+  \setbeamercolor{conclusionTakeaway}{fg=black,bg=blue!12}
+  \noindent\makebox[\textwidth][c]{%
+    \begin{beamercolorbox}[wd=0.96\textwidth,sep=0.65em,center,rounded=true]{conclusionTakeaway}
+      \small\bfseries
+      Better gates, careful measurements, and error strategies bring us closer to reliable quantum computing.
+    \end{beamercolorbox}%
+  }
+\end{frame}
